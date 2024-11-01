@@ -1,16 +1,17 @@
 var Arr = [];
 var num = 0;
+var console = el('console');
 function del(source){
     Arr = [];
-    $(source).innerHTML = Arr;
+    el(source).innerHTML = Arr;
     num = 0;
 }
 function log(source,output){
-    Arr.push(`[${num + 1}] ${output}`);
-    $(source).innerHTML += Arr[num] + "<br>";
-    $(source).scrollTop = $(source).scrollHeight;
+    Arr.push(`[${num+1}] ${output}`);
+    el(source).innerHTML += Arr[num] + "<br>";
+    el(source).scrollTop = el(source).scrollHeight;
     num++;
 }
-function $(x){
+function el(x){
     return document.getElementById(x);
 }
